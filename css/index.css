@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+:root {
+    --col-bg: #ffffff;
+    --col-bg-fg: #222222;
+    --col-accent1:  palevioletred;
+    --col-accent1-fg: #000000;
+    --col-accent2:  plum;
+    --col-accent2-fg: #000000;
+    --col-accent3:  mediumslateblue;
+    --col-accent3-fg: #ffffff;
+    --col-action: firebrick;
+    --col-action-fg: #ffffff;
+    --col-error: tomato;
+    --col-error-fg: #000000;
+    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Bebas Neue', sans-serif;
+    --animations: 0.3s;
+  }
+  
+  body {
+    background-color: var(--col-bg);
+    color: var(--col-bg-fg);
+    font-family: var(--font-body);
+    margin: 1rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.5;
+    margin: 0.25em 0;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  strong {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
