@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+:root {
+    --col-bg: #ffffff;
+    --col-bg-fg: #222222;
+    --col-accent1:  palevioletred;
+    --col-accent1-fg: #000000;
+    --col-accent2:  plum;
+    --col-accent2-fg: #000000;
+    --col-accent3:  mediumslateblue;
+    --col-accent3-fg: #ffffff;
+    --col-action: firebrick;
+    --col-action-fg: #ffffff;
+    --col-error: tomato;
+    --col-error-fg: #000000;
+    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Bebas Neue', sans-serif;
+    --animations: 0.3s;
+  }
+  
+  body {
+    background-color: var(--col-bg);
+    color: var(--col-bg-fg);
+    font-family: var(--font-body);
+    margin: 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.5;
+    margin: 0.25rem 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  strong {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .branding {
+    background-color: var(--col-accent2);
+    color: var(--col-accent2-fg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .others {
+    background-color: var(--col-accent1);
+    color: var(--col-accent1-fg);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    padding-top: 2.1875rem;
+  }
+    .others .panel {
+      overflow-y: scroll;
+      opacity: 0;
+      transition: opacity var(--animations);
+    }
+  .others.open {
+    left: 0;
+  }
+    .others.open .panel {
+      opacity: 1;
+    }
+
+.toggle-others {
+    background-color: var(--col-accent3);
+    color: var(--col-accent3-fg);
+    position: fixed;
+    top: 0.5rem;
+    left: 1rem;
+    line-height: 1.25;
+    z-index: 4;
+    padding: 0;
+    border: none;
+    padding: 0 0.5rem;
+    }
+
+.conversation {
+    padding: 0 1rem;
+    margin-top: 2.1875rem;
+    }
+
+.smol-img {
+    width: 2rem;
+}
+
+/***** sizes ******/
+
+@media screen and (min-width: 40rem) {
+    .others {
+        display: block;
+        left: 0;
+        z-index: 1;
+        width: 20rem;
+        opacity: 1;
+        transform: translateX(-20rem);
+        transition: transform var(--animations);
+    }
+    .others.open {
+        transform: translateX(0rem);
+    }
+    .conversation {
+        transition: margin-left var(--animations);
+    }
+    .others.open ~ .conversation {
+        margin-left: 20rem;
+    }
+    .toggle-others {
+        position: absolute;
+        top: 3rem;
+        left: auto;
+        right: -1.5rem;
+        width: 1.5rem;
+        height: 5rem;
+        padding: 0.25rem;
+        text-align: center;
+    }
+    .toggle-others span {
+        writing-mode: vertical-rl;
+    } 
+    }
+
+
+/**** V BIG ****/
+
+    @media screen and (min-width: 60rem) {
+        .others {
+          width: 30rem;
+          transform: translateX(-30rem);
+        }
+        .others.open ~ .conversation {
+          margin-left: 30rem;
+        }
+      }
