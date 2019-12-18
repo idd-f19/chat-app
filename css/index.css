@@ -43,7 +43,18 @@
     font-size: 1.25rem;
   }
 
+  .layout {
+      display: grid;
+      grid-template-rows: 1fr 22fr 1fr;
+      grid-template-areas:
+      "head"
+      "body"
+      "foot";
+  }
+
   .branding {
+    grid-area: head;
+
     background-color: var(--col-accent2);
     color: var(--col-accent2-fg);
     position: fixed;
@@ -72,12 +83,16 @@
       opacity: 0;
       transition: opacity var(--animations);
     }
-  .others.open {
+  /* .others.open {
     left: 0;
-  }
+  } */
     .others.open .panel {
       opacity: 1;
     }
+
+.foot {
+    grid-area: foot;
+}
 
 .toggle-others {
     background-color: var(--col-accent3);
@@ -93,12 +108,52 @@
     }
 
 .conversation {
-    padding: 0 1rem;
-    margin-top: 2.1875rem;
-    }
+    grid-area: body;
+
+    padding: 1rem;
+    margin: 1.5rem 0;
+    background: paleturquoise;
+    border-radius: 1rem;
+}
 
 .smol-img {
-    width: 2rem;
+    width: 3rem;
+}
+
+.messages {
+    display: flex;
+
+}
+
+.message {
+    width: 80%;
+    background-color: gray;
+    border-radius:1rem;
+    padding: 1rem;
+}
+
+.message.from-me {
+     background-color: lightpink;
+     justify-self: end;
+
+}
+
+.message.from-them {
+    background-color: lightgreen;
+    justify-self: start;
+}
+
+/* Input */
+.newmsg{
+    position: absolute;
+    overflow: hidden;
+}
+
+.input-box {
+    position: fix;
+    width: 80%;
+    background-color:lightgrey;
+    border-radius:1rem;
 }
 
 /***** sizes ******/
